@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clase 2º DAM</title>
+    </head>
+    <body>
+        <h1>Clase 2º DAM</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>DNI</th>
+                <th>Acciones</th>
+            </tr>
+            <tr th:each="alumno : ${alumnos}">
+                <td th:text="${alumno.id}"></td>
+                <td th:text="${alumno.nombre}"></td>
+                <td th:text="${alumno.apellido}"></td>
+                <td th:text="${alumno.edad}"></td>
+                <td th:text="${alumno.dni}"></td>
+                <td>
+                <a th:href="@{/modificar/{id}(id=${alumno.id})}">Editar</a> |
+                <a th:href="@{/eliminar/{id}(id=${alumno.id})}">Eliminar</a>
+            </td>
+            </tr>
+        </table>
+        <div>
+            <div sd:pagination-sumary=""></div>
+            <ul class="pagination" sd:pagination="pager">
+            </ul>
+        </div>
+        <a th:href="@{/agregar}">Añadir alumno</a>
+    </body>
+</html>

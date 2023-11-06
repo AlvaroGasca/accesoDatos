@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Alumno</title>
+</head>
+<body>
+    <h1>Eliminar Alumno</h1>
+    <p>¿Seguro que deseas eliminar este alumno?</p>
+    <form action="@{/eliminar/{id}(id=${alumno.id})}" method="post">
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>
+
+
